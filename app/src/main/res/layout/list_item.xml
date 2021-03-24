@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="item"
+            type="com.hh.averageprice.network.model.Item" />
+
+        <variable
+            name="click"
+            type="com.hh.averageprice.adapter.MyAdapterClickListener" />
+    </data>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="8dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        card_view:cardElevation="10dp"
+        android:hardwareAccelerated="true"
+        card_view:cardPreventCornerOverlap="false"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintBottom_toBottomOf="parent"
+        card_view:layout_constraintTop_toTopOf="parent"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> click.onclick(item)}"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address"
+            android:text="@{`Price : ` + String.valueOf(item.price)}"
+
+            />
+
+
+
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{`Address: ` +item.address}"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

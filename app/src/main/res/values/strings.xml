@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Average Property Price</string>
+    <string name="question">What Is The Average Property Price?</string>
+    <string name="error">server error!!! Try again later</string>
+</resources>
